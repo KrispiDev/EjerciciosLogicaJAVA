@@ -1,0 +1,41 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer el número de términos desde la consola.
+** Solicitar al usuario el número de términos: Se solicita al usuario que ingrese el número de términos para la aproximación de la serie armónica.
+** Calcular y mostrar la aproximación: Se llama a la función calcularAproximacion pasando el número de términos ingresado por el usuario, y se muestra el resultado 
+** en la consola.
+** Función calcularAproximacion: Dentro de esta función, se utiliza un bucle for para calcular la sumatoria de los inversos de los enteros positivos hasta el término 
+** especificado.
+** Imprimir el resultado: Se imprime en la consola la aproximación de la serie armónica con el número de términos especificado.
+**/
+
+import java.util.Scanner;
+
+public class SerieArmonica {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario el número de términos para la aproximación
+        System.out.print("Ingrese el número de términos para la aproximación de la serie armónica: ");
+        int numTerminos = scanner.nextInt();
+
+        // Calcular y mostrar la aproximación de la serie armónica
+        double aproximacion = calcularAproximacion(numTerminos);
+        System.out.println("La aproximación de la serie armónica con " + numTerminos + " términos es: " + aproximacion);
+    }
+
+    // Función para calcular la aproximación de la serie armónica
+    static double calcularAproximacion(int numTerminos) {
+        double suma = 0.0;
+
+        // Calcular la sumatoria de los inversos de los enteros positivos hasta el término especificado
+        for (int k = 1; k <= numTerminos; k++) {
+            suma += 1.0 / k;
+        }
+
+        return suma;
+    }
+}

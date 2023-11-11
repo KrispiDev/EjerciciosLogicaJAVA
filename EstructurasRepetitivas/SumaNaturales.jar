@@ -1,0 +1,15 @@
+public class SumaNaturales {
+    public static void main(String[] args) {
+        // Declarar una variable para almacenar la suma
+        int suma = 0;
+        
+        // Usar un bucle for para sumar los números del 1 al 100
+        for (int n = 1; n <= 100; n++) {
+            // Sumar el valor actual de 'n' a 'suma'
+            suma += n;
+        }
+        
+        // Imprimir el resultado
+        System.out.println("La suma de los primeros 100 números naturales es: " + suma);
+    }
+}

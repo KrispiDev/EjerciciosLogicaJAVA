@@ -1,0 +1,62 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer el salario bruto y el número de hijos desde la consola.
+** Solicitar al usuario que ingrese el salario bruto y el número de hijos: Se solicita al usuario que ingrese el salario bruto y el número de hijos.
+** Llamada a la función calcularSalarioNeto: Se llama a la función calcularSalarioNeto pasando el salario bruto y el número de hijos.
+** Función calcularSalarioNeto: Dentro de esta función, se utiliza una serie de condiciones para determinar la retención aplicable según el número de hijos. Luego, 
+** se calcula el salario neto restando la retención al salario bruto.
+** Imprimir el salario neto: Se imprime en la consola el salario neto del trabajador.
+** Cerrar el Scanner: Se cierra el objeto Scanner para liberar recursos.Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer el salario bruto y el número de hijos desde la consola.
+** Solicitar al usuario que ingrese el salario bruto y el número de hijos: Se solicita al usuario que ingrese el salario bruto y el número de hijos.
+** Llamada a la función calcularSalarioNeto: Se llama a la función calcularSalarioNeto pasando el salario bruto y el número de hijos.
+** Función calcularSalarioNeto: Dentro de esta función, se utiliza una serie de condiciones para determinar la retención aplicable según el número de hijos. Luego, se calcula el salario neto restando la retención al salario bruto.
+** Imprimir el salario neto: Se imprime en la consola el salario neto del trabajador.
+**/
+
+import java.util.Scanner;
+
+public class CalculoSalarioNeto {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese el salario bruto
+        System.out.print("Ingrese el salario bruto: $");
+        double salarioBruto = scanner.nextDouble();
+
+        // Solicitar al usuario que ingrese el número de hijos
+        System.out.print("Ingrese el número de hijos: ");
+        int numeroHijos = scanner.nextInt();
+
+        // Calcular el salario neto
+        double salarioNeto = calcularSalarioNeto(salarioBruto, numeroHijos);
+
+        // Imprimir el salario neto
+        System.out.println("El salario neto es: $" + salarioNeto);
+    }
+
+    // Función para calcular el salario neto con retenciones
+    static double calcularSalarioNeto(double salarioBruto, int numeroHijos) {
+        double retencion = 0.0;
+
+        // Aplicar retención según el número de hijos
+        if (numeroHijos <= 2) {
+            retencion = 0.2; // 20% de retención
+        } else if (numeroHijos >= 3 && numeroHijos <= 5) {
+            retencion = 0.15; // 15% de retención
+        } else if (numeroHijos >= 6 && numeroHijos <= 7) {
+            retencion = 0.1; // 10% de retención
+        } else if (numeroHijos >= 8 && numeroHijos <= 9) {
+            retencion = 0.05; // 5% de retención
+        }
+
+        // Calcular el salario neto restando la retención al salario bruto
+        double salarioNeto = salarioBruto - (salarioBruto * retencion);
+
+        return salarioNeto;
+    }
+}

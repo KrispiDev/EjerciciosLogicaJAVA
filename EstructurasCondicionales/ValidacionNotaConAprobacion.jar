@@ -1,0 +1,40 @@
+/**
+** Explicación paso a paso:
+** Agregar la verificación de aprobación: Después de verificar que la nota es válida, se agrega un bloque if-else adicional para determinar si el alumno aprobó o no. 
+** En este caso, la condición es que la nota sea mayor o igual a 6 para aprobar.
+** Impresión del resultado de la aprobación: Se imprime en la consola si el alumno aprobó o no, dependiendo de la nota ingresada.
+**/
+
+import java.util.Scanner;
+
+public class ValidacionNotaConAprobacion {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese una nota
+        System.out.print("Ingrese una nota (entre 0 y 10): ");
+        double nota = scanner.nextDouble();
+
+        // Verificar si la nota ingresada es válida
+        if (esNotaValida(nota)) {
+            System.out.println("La nota es correcta.");
+
+            // Verificar si el alumno aprobó o no
+            if (nota >= 6) {
+                System.out.println("¡Felicidades! El alumno aprobó.");
+            } else {
+                System.out.println("El alumno no aprobó.");
+            }
+        } else {
+            System.out.println("La nota no es válida. Debe estar entre 0 y 10.");
+        }
+    }
+
+    // Función para verificar si la nota es válida
+    static boolean esNotaValida(double nota) {
+        // Verificar si la nota está dentro del rango de 0 a 10
+        return nota >= 0 && nota <= 10;
+    }
+}

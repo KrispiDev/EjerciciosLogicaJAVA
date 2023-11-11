@@ -1,0 +1,52 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer el número de términos desde la consola.
+** Solicitar al usuario el número de términos: Se solicita al usuario que ingrese el número de términos deseados para la serie.
+** Calcular y mostrar los términos de la serie: Se llama a la función calcularSerie para calcular y mostrar los términos de la serie según el número ingresado por 
+** el usuario.
+** Función calcularSerie: Dentro de esta función, se utiliza un bucle for para calcular y mostrar los términos de la serie. Se inicializa el primer término como 1 y 
+** en cada iteración se multiplica por -2 para obtener el siguiente término.
+** Imprimir los términos de la serie: Se imprime cada término y se añade una coma y espacio si no es el último término. Al final, se imprime un salto de línea.
+**/
+
+import java.util.Scanner;
+
+public class CalculoSerie {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario el número de términos para la serie
+        System.out.print("Ingrese el número de términos para la serie: ");
+        int numTerminos = scanner.nextInt();
+
+        // Calcular y mostrar los términos de la serie
+        System.out.println("Los primeros " + numTerminos + " términos de la serie son:");
+        calcularSerie(numTerminos);
+    }
+
+    // Función para calcular y mostrar los términos de la serie
+    static void calcularSerie(int numTerminos) {
+        // Inicializar el primer término de la serie
+        int termino = 1;
+
+        // Calcular y mostrar los términos de la serie
+        for (int i = 0; i < numTerminos; i++) {
+            // Imprimir el término actual
+            System.out.print(termino);
+
+            // Imprimir una coma y espacio si no es el último término
+            if (i < numTerminos - 1) {
+                System.out.print(", ");
+            }
+
+            // Calcular el siguiente término multiplicando por -2
+            termino *= -2;
+        }
+
+        // Imprimir un salto de línea al final
+        System.out.println();
+    }
+}

@@ -1,0 +1,35 @@
+/**
+** Explicación paso a paso:
+** Definir los números: En este ejemplo, he definido dos variables numero y divisor con valores de ejemplo (20 y 5, respectivamente).
+** Llamada a la función esDivisible: Se llama a la función esDivisible pasando el número y el divisor como argumentos.
+** Función esDivisible: Dentro de esta función, se utiliza el operador de módulo (%) para obtener el residuo de la división del número entre el divisor.
+** Verificación del residuo: Se utiliza una declaración if para verificar si el residuo es igual a cero. Si es cero, entonces el número es divisible por el divisor; 
+** de lo contrario, no es divisible.
+** Impresión del resultado: Se imprime en la consola si el número es divisible por el divisor o no.
+**/
+
+public class Divisibilidad {
+
+    public static void main(String[] args) {
+        // Definir los números que deseas verificar
+        int numero = 20;
+        int divisor = 5;
+
+        // Verificar si el número es divisible por el divisor
+        if (esDivisible(numero, divisor)) {
+            System.out.println(numero + " es divisible por " + divisor);
+        } else {
+            System.out.println(numero + " no es divisible por " + divisor);
+        }
+    }
+
+    // Función para verificar la divisibilidad
+    static boolean esDivisible(int numero, int divisor) {
+        // Utilizamos el operador de módulo (%) para obtener el residuo
+        int residuo = numero % divisor;
+
+        // Si el residuo es cero, entonces el número es divisible por el divisor
+        // De lo contrario, no es divisible
+        return residuo == 0;
+    }
+}

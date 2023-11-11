@@ -1,0 +1,48 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer la entrada del usuario desde la consola.
+** Solicitar al usuario que ingrese un número entero: Se muestra un mensaje pidiendo al usuario que ingrese un número entero, y el valor ingresado se almacena en la 
+** variable numero.
+** Verificar si el número es distinto de cero: Se utiliza una condición if para verificar si el número ingresado es diferente de cero.
+** Verificar si el número es par o impar: Si el número es distinto de cero, se verifica si es par o impar utilizando la función esPar.
+** Función esPar: Dentro de esta función, se utiliza el operador de módulo (%) para determinar si el número es divisible por 2.
+** Impresión del resultado: Se imprime en la consola si el número es distinto de cero, y en caso afirmativo, si es par o impar.
+**/
+
+import java.util.Scanner;
+
+public class ParOImpar {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese un número entero
+        System.out.print("Ingrese un número entero: ");
+        int numero = scanner.nextInt();
+
+        // Verificar si el número es distinto de cero
+        if (numero != 0) {
+            System.out.println("El número es distinto de cero.");
+
+            // Verificar si el número es par o impar
+            if (esPar(numero)) {
+                System.out.println("El número es par.");
+            } else {
+                System.out.println("El número es impar.");
+            }
+        } else {
+            System.out.println("El número es cero.");
+        }
+
+        // Cerrar el Scanner
+        scanner.close();
+    }
+
+    // Función para verificar si un número es par
+    static boolean esPar(int numero) {
+        // Utilizamos el operador de módulo (%) para determinar si el número es divisible por 2
+        return numero % 2 == 0;
+    }
+}

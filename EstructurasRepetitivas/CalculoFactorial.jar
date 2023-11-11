@@ -1,0 +1,31 @@
+/**
+** Explicación paso a paso:
+** Definición de la clase: Se define una clase llamada CalculoFactorial.
+** Función main: En la función principal main, se utiliza un bucle for para iterar desde 0 hasta 20 (inclusive) y calcular el factorial de cada número.
+** Función calcularFactorial: Se define una función llamada calcularFactorial que toma un número n como argumento y devuelve el factorial de ese número.
+** Caso base: En la función calcularFactorial, se verifica si n es igual a 0 o 1. En caso afirmativo, el factorial es 1, que es el caso base.
+** Caso recursivo: Si n es mayor que 1, se utiliza la recursión para calcular el factorial de n multiplicando n por el factorial de n-1.
+** Impresión de resultados: Se imprime en la consola el resultado del cálculo del factorial para cada número del 0 al 20.
+**/
+
+public class CalculoFactorial {
+
+    public static void main(String[] args) {
+        // Calcular y mostrar el factorial de los primeros 20 números naturales
+        for (int n = 0; n <= 20; n++) {
+            long factorial = calcularFactorial(n);
+            System.out.println("Factorial de " + n + ": " + factorial);
+        }
+    }
+
+    // Función para calcular el factorial de un número
+    static long calcularFactorial(int n) {
+        // Caso base: factorial de 0 y 1 es 1
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            // Caso recursivo: factorial de n es n multiplicado por el factorial de n-1
+            return n * calcularFactorial(n - 1);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer la entrada del usuario desde la consola.
+** Solicitar al usuario que ingrese una nota: Se muestra un mensaje pidiendo al usuario que ingrese una nota, y el valor ingresado se almacena en la variable nota.
+** Llamada a la función esNotaValida: Se llama a la función esNotaValida pasando la nota ingresada por el usuario.
+** Función esNotaValida: Dentro de esta función, se utiliza una expresión booleana para verificar si la nota está dentro del rango válido (de 0 a 10).
+** Impresión del resultado: Se imprime en la consola si la nota es válida o no.
+**/
+
+import java.util.Scanner;
+
+public class ValidacionNota {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese una nota
+        System.out.print("Ingrese una nota (entre 0 y 10): ");
+        double nota = scanner.nextDouble();
+
+        // Verificar si la nota ingresada es válida
+        if (esNotaValida(nota)) {
+            System.out.println("La nota es correcta. ¡Bien hecho!");
+        } else {
+            System.out.println("La nota no es válida. Debe estar entre 0 y 10.");
+        }
+    }
+
+    // Función para verificar si la nota es válida
+    static boolean esNotaValida(double nota) {
+        // Verificar si la nota está dentro del rango de 0 a 10
+        return nota >= 0 && nota <= 10;
+    }
+}

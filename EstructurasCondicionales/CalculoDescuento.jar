@@ -1,0 +1,54 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer la cantidad de unidades y el precio del artículo desde la consola.
+** Solicitar al usuario que ingrese la cantidad de unidades compradas y el precio del artículo: Se solicita al usuario que ingrese la cantidad de unidades y el 
+** precio del artículo.
+** Llamada a la función calcularImporteFinal: Se llama a la función calcularImporteFinal pasando la cantidad de unidades y el precio del artículo.
+** Función calcularImporteFinal: Dentro de esta función, se utiliza una serie de condiciones para determinar el descuento aplicable según la cantidad de unidades 
+** compradas. Luego, se calcula el importe final restando el descuento al precio original.
+** Imprimir el importe final: Se imprime en la consola el importe final del artículo.
+**/
+
+import java.util.Scanner;
+
+public class CalculoDescuento {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese la cantidad de unidades compradas
+        System.out.print("Ingrese la cantidad de unidades compradas: ");
+        int cantidad = scanner.nextInt();
+
+        // Solicitar al usuario que ingrese el precio del artículo
+        System.out.print("Ingrese el precio del artículo: ");
+        double precio = scanner.nextDouble();
+
+        // Calcular el descuento y el importe final
+        double importeFinal = calcularImporteFinal(cantidad, precio);
+
+        // Imprimir el importe final
+        System.out.println("El importe final del artículo es: $" + importeFinal);
+    }
+
+    // Función para calcular el importe final con descuento
+    static double calcularImporteFinal(int cantidad, double precio) {
+        double descuento = 0.0;
+
+        // Aplicar descuento según la cantidad comprada
+        if (cantidad > 100) {
+            descuento = 0.4; // 40% de descuento
+        } else if (cantidad >= 25 && cantidad <= 100) {
+            descuento = 0.2; // 20% de descuento
+        } else if (cantidad >= 10 && cantidad <= 24) {
+            descuento = 0.1; // 10% de descuento
+        }
+
+        // Calcular el importe final restando el descuento al precio original
+        double importeFinal = precio - (precio * descuento);
+
+        return importeFinal;
+    }
+}

@@ -1,0 +1,40 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer los cinco números desde la consola.
+** Inicializar una variable para la suma: Se declara una variable suma para almacenar la suma total de los números.
+** Solicitar al usuario que ingrese cinco números: Se utiliza un bucle for para solicitar al usuario que ingrese cinco números. En cada iteración, se lee el número 
+** ingresado y se suma a la variable suma.
+** Calcular la media: Después de haber leído los cinco números, se calcula la media dividiendo la suma total (suma) por la cantidad de números (5 en este caso).
+** Imprimir el resultado: Se imprime en la consola la media de los cinco números.
+**/
+
+import java.util.Scanner;
+
+public class CalculoMedia {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Inicializar una variable para almacenar la suma de los números
+        double suma = 0;
+
+        // Solicitar al usuario que ingrese cinco números
+        System.out.println("Ingrese cinco números:");
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Número " + i + ": ");
+            double numero = scanner.nextDouble();
+
+            // Sumar el número a la suma total
+            suma += numero;
+        }
+
+        // Calcular la media dividiendo la suma por la cantidad de números
+        double media = suma / 5;
+
+        // Imprimir el resultado
+        System.out.println("La media de los cinco números es: " + media);
+    }
+}

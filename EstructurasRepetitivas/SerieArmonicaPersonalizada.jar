@@ -1,0 +1,47 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer la cantidad de términos desde la consola.
+** Solicitar al usuario la cantidad de términos: Se solicita al usuario que ingrese la cantidad de términos para la serie armónica.
+** Validar la cantidad de términos: Se verifica que la cantidad de términos sea mayor que cero. Si no lo es, se imprime un mensaje de error y se termina el programa.
+** Calcular y mostrar la serie armónica personalizada: Si la cantidad de términos es válida, se llama a la función calcularSerieArmonica para calcular y mostrar la 
+** serie armónica con la cantidad de términos especificada.
+** Función calcularSerieArmonica: Dentro de esta función, se utiliza un bucle for para calcular la sumatoria de los inversos de los enteros positivos hasta el 
+** término especificado.
+** Imprimir el resultado: Se imprime en la consola el resultado de la serie armónica con la cantidad de términos especificada.
+**/
+
+import java.util.Scanner;
+
+public class SerieArmonicaPersonalizada {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario el número de términos para la serie armónica
+        System.out.print("Ingrese la cantidad de términos para la serie armónica: ");
+        int numTerminos = scanner.nextInt();
+
+        // Validar que el número de términos sea mayor que cero
+        if (numTerminos <= 0) {
+            System.out.println("La cantidad de términos debe ser mayor que cero. Programa finalizado.");
+        } else {
+            // Calcular y mostrar la serie armónica personalizada
+            double resultado = calcularSerieArmonica(numTerminos);
+            System.out.println("El resultado de la serie armónica con " + numTerminos + " términos es: " + resultado);
+        }
+    }
+
+    // Función para calcular la serie armónica con un número de términos específico
+    static double calcularSerieArmonica(int numTerminos) {
+        double suma = 0.0;
+
+        // Calcular la sumatoria de los inversos de los enteros positivos hasta el término especificado
+        for (int k = 1; k <= numTerminos; k++) {
+            suma += 1.0 / k;
+        }
+
+        return suma;
+    }
+}

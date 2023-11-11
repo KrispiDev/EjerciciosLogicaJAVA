@@ -1,0 +1,22 @@
+/**
+** Explicación paso a paso:
+** Declarar la variable de sumatoria: Se declara una variable sumatoria para almacenar el resultado acumulado de la sumatoria.
+** Calcular la sumatoria con un bucle for: Se utiliza un bucle for para iterar desde n=1 hasta n=100. En cada iteración, se suma el valor actual de n a la sumatoria.
+** Imprimir el resultado: Se imprime en la consola el resultado de la sumatoria de los primeros 100 números naturales.
+**/
+
+public class Sumatoria {
+
+    public static void main(String[] args) {
+        // Inicializar la variable para almacenar la sumatoria
+        int sumatoria = 0;
+
+        // Calcular la sumatoria de los primeros 100 números naturales
+        for (int n = 1; n <= 100; n++) {
+            sumatoria += n; // Sumar el valor actual de n a la sumatoria
+        }
+
+        // Imprimir el resultado
+        System.out.println("La sumatoria de los primeros 100 números naturales es: " + sumatoria);
+    }
+}

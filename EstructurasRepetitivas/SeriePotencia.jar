@@ -1,0 +1,43 @@
+/**
+** Explicación paso a paso:
+** Importar la clase Scanner: Importamos java.util.Scanner para utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Creamos un objeto Scanner llamado scanner para leer la cantidad de términos desde la consola.
+** Solicitar al usuario la cantidad de términos: Se solicita al usuario que ingrese la cantidad de términos para la serie.
+** Calcular y mostrar la suma de la serie de potencias: Se llama a la función calcularSeriePotencia para calcular y mostrar la suma de la serie con la cantidad de 
+** términos especificada.
+** Función calcularSeriePotencia: Dentro de esta función, se utiliza un bucle for para calcular la sumatoria de los términos de la serie. Para cada término, se 
+** calcula la potencia correspondiente utilizando Math.pow(a, b).
+** Imprimir el resultado: Se imprime en la consola el resultado de la serie con la cantidad de términos especificada.
+**/
+
+import java.util.Scanner;
+
+public class SeriePotencia {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario el número de términos para la serie
+        System.out.print("Ingrese la cantidad de términos para la serie: ");
+        int numTerminos = scanner.nextInt();
+
+        // Calcular y mostrar la suma de la serie de potencias
+        double resultado = calcularSeriePotencia(numTerminos);
+        System.out.println("El resultado de la serie con " + numTerminos + " términos es: " + resultado);
+    }
+
+    // Función para calcular la suma de la serie de potencias hasta n términos
+    static double calcularSeriePotencia(int numTerminos) {
+        double suma = 0.0;
+
+        // Calcular la sumatoria de los términos de la serie
+        for (int n = 1; n <= numTerminos; n++) {
+            // Calcular el término actual y sumarlo a la suma total
+            double termino = n / Math.pow(2, n);
+            suma += termino;
+        }
+
+        return suma;
+    }
+}

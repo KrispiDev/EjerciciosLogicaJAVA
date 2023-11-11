@@ -1,0 +1,41 @@
+/** 
+** Explicación paso a paso:
+** Importar la clase Scanner: Necesitamos importar java.util.Scanner para poder utilizar la clase Scanner y leer la entrada del usuario.
+** Crear un objeto Scanner: Se crea un objeto Scanner llamado scanner para leer la entrada del usuario desde la consola.
+** Solicitar al usuario que ingrese un número: Se muestra un mensaje pidiendo al usuario que ingrese un número, y el valor ingresado se almacena en la variable 
+** opcionUsuario.
+** Llamada a la función esOpcionValida: Se llama a la función esOpcionValida pasando la opción ingresada por el usuario y el número máximo de opciones permitidas en 
+** el menú.
+** Función esOpcionValida: Dentro de esta función, se utiliza una expresión booleana para verificar si la opción está dentro del rango válido (de 1 a maxOpciones).
+** Impresión del resultado: Se imprime en la consola si la opción es válida o no.
+**/
+
+import java.util.Scanner;
+
+public class ValidacionMenu {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese un número
+        System.out.print("Ingrese un número para la opción del menú: ");
+        int opcionUsuario = scanner.nextInt();
+
+        // Verificar si la opción ingresada es válida
+        if (esOpcionValida(opcionUsuario, 5)) { // En este caso, el rango es de 1 a 5
+            System.out.println("¡Opción válida!");
+        } else {
+            System.out.println("Opción no válida. Debe estar entre 1 y 5.");
+        }
+
+        // Cerrar el Scanner
+        scanner.close();
+    }
+
+    // Función para verificar si la opción es válida
+    static boolean esOpcionValida(int opcion, int maxOpciones) {
+        // Verificar si la opción está dentro del rango de 1 a maxOpciones
+        return opcion >= 1 && opcion <= maxOpciones;
+    }
+}

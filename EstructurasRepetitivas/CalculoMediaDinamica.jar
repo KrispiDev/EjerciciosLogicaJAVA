@@ -1,0 +1,49 @@
+/**
+**Explicación paso a paso:
+** Solicitar al usuario la cantidad de números a introducir: Se utiliza Scanner para preguntar al usuario cuántos números desea introducir.
+** Validar la cantidad de números: Se verifica que la cantidad de números sea mayor que cero. Si no lo es, el programa imprime un mensaje y se termina.
+** Iniciar la suma y solicitar los números: Si la cantidad de números es válida, se inicializa la variable suma y se solicita al usuario que ingrese los números en 
+** un bucle for.
+** Calcular la media: Después de haber leído la cantidad especificada de números, se calcula la media dividiendo la suma total (suma) por la cantidad de números 
+** ingresados.
+** Imprimir el resultado: Se imprime en la consola la media de los números introducidos.
+**/
+
+import java.util.Scanner;
+
+public class CalculoMediaDinamica {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario la cantidad de números a introducir
+        System.out.print("Ingrese la cantidad de números a introducir: ");
+        int cantidadNumeros = scanner.nextInt();
+
+        // Validar que la cantidad de números sea mayor que cero
+        if (cantidadNumeros <= 0) {
+            System.out.println("La cantidad de números debe ser mayor que cero. Programa finalizado.");
+        } else {
+            // Inicializar una variable para almacenar la suma de los números
+            double suma = 0;
+
+            // Solicitar al usuario que ingrese los números
+            System.out.println("Ingrese los números:");
+
+            for (int i = 1; i <= cantidadNumeros; i++) {
+                System.out.print("Número " + i + ": ");
+                double numero = scanner.nextDouble();
+
+                // Sumar el número a la suma total
+                suma += numero;
+            }
+
+            // Calcular la media dividiendo la suma por la cantidad de números
+            double media = suma / cantidadNumeros;
+
+            // Imprimir el resultado
+            System.out.println("La media de los " + cantidadNumeros + " números es: " + media);
+        }
+    }
+}
